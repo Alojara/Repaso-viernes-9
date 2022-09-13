@@ -1,0 +1,121 @@
+<!--
+<div>
+  <p>
+    numero pd
+    <input type="number">
+  </p>
+  </div>
+<div>
+  <p>
+    Nombre pkm
+    <input type="text">
+  </p>
+</div>
+<div>
+  <p>
+    Foto pkm
+    <input type="text">
+  </p>
+</div>
+<div>
+  <p>
+    Descripcion pkm
+    <input type="text">
+  </p>
+</div>
+<div>
+  <p>
+    Tipo
+    <input type="text">
+  </p>
+</div>
+<div>
+  <p>
+    Debilidades pkm
+    <input type="text">
+  </p>
+</div>
+<div>
+  <p>
+    <input type="submit" name="Enviar">
+  </p>
+</div>
+-->
+<section>
+  <fieldset>
+    <label for="">Numero Pokedex</label>
+    <input
+    type="number"
+    name="numpd"
+    [value]="pokemon.numpd"
+    (input)="cambiarNumeropd($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label for="">Nombre Pkm</label>
+    <input
+    type="text"
+    name="nombre"
+    [value]="pokemon.nombre"
+    (input)="cambiarNombre($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label for="">Foto Pkm</label>
+    <input
+    type="url"
+    name="foto"
+    [value]="pokemon.foto"
+    (input)="cambiarFoto($event)"
+    >
+    <app-mostrar-imagen
+    [imagen]="pokemon.foto"
+    ></app-mostrar-imagen>
+  </fieldset>
+  <fieldset>
+    <label for="">Descripcion Pkm</label>
+    <input
+    type="textarea"
+    name="Descripcion Pkm"
+    [value]="pokemon.descripcion"
+    (input)="cambiarDescri($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label for="">Tipo Pkm</label>
+    <select
+    [value]="pokemon.tipo"
+    (change)="cambiarTipo($event)"
+    >
+      <option
+        *ngFor="let tipo of tipos"
+        [value]="tipo"
+
+      >{{tipo}}</option>
+    </select>
+    <!--<select>
+      <option
+        *ngFor="let tipo of tipos"
+        [value]="tipos"
+      >{{tipo}}</option>
+    </select>-->
+  </fieldset>
+  <fieldset>
+    <label for="">Debilidades Pkm</label>
+    <select
+    [value]="pokemon.debilidades"
+    (change)="cambiarDeb($event)">
+      <option
+        *ngFor="let tipo of tipos"
+        [value]="tipo"
+
+        >{{tipo}}
+      </option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <button
+    (click)="guardar()"
+    >Guardar</button>
+  </fieldset>
+</section>
